@@ -3,7 +3,7 @@
 one:
   name_cour: MyString
   duration_cour: 1.5
-  date_cour: 2018-09-15
+  date_cour: 2018-09-22
   link_cour: MyString
   teacher_cour: MyString
   course_type: one
@@ -12,7 +12,7 @@ one:
 two:
   name_cour: MyString
   duration_cour: 1.5
-  date_cour: 2018-09-15
+  date_cour: 2018-09-22
   link_cour: MyString
   teacher_cour: MyString
   course_type: two

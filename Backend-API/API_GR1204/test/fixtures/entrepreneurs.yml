@@ -6,7 +6,7 @@ one:
   cc_entre: 1.5
   phone_entre: 1.5
   address_entre: MyString
-  age_entre_int: MyString
+  age_entre: 1
   email_entre: MyString
   neighborhood: one
 
@@ -16,6 +16,6 @@ two:
   cc_entre: 1.5
   phone_entre: 1.5
   address_entre: MyString
-  age_entre_int: MyString
+  age_entre: 1
   email_entre: MyString
   neighborhood: two

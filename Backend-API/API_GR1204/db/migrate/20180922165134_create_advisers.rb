@@ -6,8 +6,8 @@ class CreateAdvisers < ActiveRecord::Migration[5.1]
       t.string :cc_adviser
       t.string :email_adviser
       t.float :phone_adviser
-      t.int :age_adviser
-      t.int :experience
+      t.integer :age_adviser
+      t.integer :experience
       t.references :area, foreign_key: true
 
       t.timestamps

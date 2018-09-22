@@ -46,6 +46,6 @@ class EntrepreneursController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def entrepreneur_params
-      params.require(:entrepreneur).permit(:name_entre, :lastname_entre, :cc_entre, :phone_entre, :address_entre, :age_entre_int, :email_entre, :neighborhood_id)
+      params.require(:entrepreneur).permit(:name_entre, :lastname_entre, :cc_entre, :phone_entre, :address_entre, :age_entre, :email_entre, :neighborhood_id)
     end
 end

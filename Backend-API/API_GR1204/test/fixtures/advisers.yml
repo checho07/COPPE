@@ -6,8 +6,8 @@ one:
   cc_adviser: MyString
   email_adviser: MyString
   phone_adviser: 1.5
-  age_adviser: 
-  experience: 
+  age_adviser: 1
+  experience: 1
   area: one
 
 two:
@@ -16,6 +16,6 @@ two:
   cc_adviser: MyString
   email_adviser: MyString
   phone_adviser: 1.5
-  age_adviser: 
-  experience: 
+  age_adviser: 1
+  experience: 1
   area: two
