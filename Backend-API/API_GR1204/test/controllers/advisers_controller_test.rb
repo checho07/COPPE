@@ -12,7 +12,7 @@ class AdvisersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create adviser" do
     assert_difference('Adviser.count') do
-      post advisers_url, params: { adviser: { age_adviser: @adviser.age_adviser, area_id: @adviser.area_id, cc_adviser: @adviser.cc_adviser, email_adviser: @adviser.email_adviser, experience: @adviser.experience, lastname_adviser: @adviser.lastname_adviser, name_adviser: @adviser.name_adviser, phone_adviser: @adviser.phone_adviser } }, as: :json
+      post advisers_url, params: { adviser: { area_id: @adviser.area_id, user_id: @adviser.user_id } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class AdvisersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update adviser" do
-    patch adviser_url(@adviser), params: { adviser: { age_adviser: @adviser.age_adviser, area_id: @adviser.area_id, cc_adviser: @adviser.cc_adviser, email_adviser: @adviser.email_adviser, experience: @adviser.experience, lastname_adviser: @adviser.lastname_adviser, name_adviser: @adviser.name_adviser, phone_adviser: @adviser.phone_adviser } }, as: :json
+    patch adviser_url(@adviser), params: { adviser: { area_id: @adviser.area_id, user_id: @adviser.user_id } }, as: :json
     assert_response 200
   end
 

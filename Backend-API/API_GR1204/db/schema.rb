@@ -10,26 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180922165739) do
+ActiveRecord::Schema.define(version: 20180922211453) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "advisers", force: :cascade do |t|
-    t.string "name_adviser"
-    t.string "lastname_adviser"
-    t.string "cc_adviser"
-    t.string "email_adviser"
-    t.float "phone_adviser"
-    t.integer "age_adviser"
-    t.integer "experience"
-    t.integer "area_id"
+    t.bigint "user_id"
+    t.bigint "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["area_id"], name: "index_advisers_on_area_id"
+    t.index ["user_id"], name: "index_advisers_on_user_id"
   end
 
   create_table "advisories", force: :cascade do |t|
     t.string "type_advisory"
-    t.integer "adviser_id"
-    t.integer "project_id"
+    t.bigint "adviser_id"
+    t.bigint "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["adviser_id"], name: "index_advisories_on_adviser_id"
@@ -42,21 +40,29 @@ ActiveRecord::Schema.define(version: 20180922165739) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "cities", force: :cascade do |t|
+    t.string "name_city"
+    t.string "depart_city"
+    t.string "zipCode_city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "companies", force: :cascade do |t|
     t.string "name_company"
     t.string "nit_company"
     t.string "address_company"
     t.string "email_company"
     t.float "phone_company"
-    t.integer "entity_type_id"
+    t.bigint "entity_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["entity_type_id"], name: "index_companies_on_entity_type_id"
   end
 
   create_table "companies_cities", force: :cascade do |t|
-    t.integer "company_id"
-    t.integer "city_id"
+    t.bigint "company_id"
+    t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["city_id"], name: "index_companies_cities_on_city_id"
@@ -75,12 +81,23 @@ ActiveRecord::Schema.define(version: 20180922165739) do
     t.date "date_cour"
     t.string "link_cour"
     t.string "teacher_cour"
-    t.integer "course_type_id"
-    t.integer "area_id"
+    t.bigint "course_type_id"
+    t.bigint "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["area_id"], name: "index_courses_on_area_id"
     t.index ["course_type_id"], name: "index_courses_on_course_type_id"
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.string "name_doc"
+    t.date "creationDate_doc"
+    t.bigint "project_id"
+    t.bigint "file_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["file_type_id"], name: "index_documents_on_file_type_id"
+    t.index ["project_id"], name: "index_documents_on_project_id"
   end
 
   create_table "entity_types", force: :cascade do |t|
@@ -90,8 +107,8 @@ ActiveRecord::Schema.define(version: 20180922165739) do
   end
 
   create_table "entrep_courses", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "entrepreneur_id"
+    t.bigint "course_id"
+    t.bigint "entrepreneur_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_entrep_courses_on_course_id"
@@ -99,17 +116,18 @@ ActiveRecord::Schema.define(version: 20180922165739) do
   end
 
   create_table "entrepreneurs", force: :cascade do |t|
-    t.string "name_entre"
-    t.string "lastname_entre"
-    t.float "cc_entre"
-    t.float "phone_entre"
-    t.string "address_entre"
-    t.integer "age_entre"
-    t.string "email_entre"
-    t.integer "neighborhood_id"
+    t.bigint "user_id"
+    t.bigint "neighborhood_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["neighborhood_id"], name: "index_entrepreneurs_on_neighborhood_id"
+    t.index ["user_id"], name: "index_entrepreneurs_on_user_id"
+  end
+
+  create_table "file_types", force: :cascade do |t|
+    t.string "fileType"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "neighborhoods", force: :cascade do |t|
@@ -125,9 +143,9 @@ ActiveRecord::Schema.define(version: 20180922165739) do
     t.integer "numMembers__project"
     t.date "creationDate_project"
     t.date "finalDate_project"
-    t.integer "entrepreneur_id"
-    t.integer "tutor_id"
-    t.integer "area_id"
+    t.bigint "entrepreneur_id"
+    t.bigint "tutor_id"
+    t.bigint "area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["area_id"], name: "index_projects_on_area_id"
@@ -135,18 +153,64 @@ ActiveRecord::Schema.define(version: 20180922165739) do
     t.index ["tutor_id"], name: "index_projects_on_tutor_id"
   end
 
+  create_table "roles", force: :cascade do |t|
+    t.string "name_role"
+    t.string "desc_role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rols", force: :cascade do |t|
+    t.string "name_rol"
+    t.string "desc_rol"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tutors", force: :cascade do |t|
-    t.string "name_tutor"
-    t.string "lastname_tutor"
-    t.float "cc_tutor"
-    t.float "phone_tutor"
-    t.integer "age_tutor"
-    t.string "email_tutor"
-    t.integer "experence_tutor"
-    t.integer "company_id"
+    t.bigint "company_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_tutors_on_company_id"
+    t.index ["user_id"], name: "index_tutors_on_user_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "name_user"
+    t.string "lastname_user"
+    t.float "cc_user"
+    t.integer "phone_user"
+    t.integer "age_user"
+    t.string "email_user"
+    t.integer "experience_user"
+    t.bigint "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["role_id"], name: "index_users_on_role_id"
+  end
+
+  add_foreign_key "advisers", "areas"
+  add_foreign_key "advisers", "users"
+  add_foreign_key "advisories", "advisers"
+  add_foreign_key "advisories", "projects"
+  add_foreign_key "companies", "entity_types"
+  add_foreign_key "companies_cities", "cities"
+  add_foreign_key "companies_cities", "companies"
+  add_foreign_key "courses", "areas"
+  add_foreign_key "courses", "course_types"
+  add_foreign_key "documents", "file_types"
+  add_foreign_key "documents", "projects"
+  add_foreign_key "entrep_courses", "courses"
+  add_foreign_key "entrep_courses", "entrepreneurs"
+  add_foreign_key "entrepreneurs", "neighborhoods"
+  add_foreign_key "entrepreneurs", "users"
+  add_foreign_key "projects", "areas"
+  add_foreign_key "projects", "entrepreneurs"
+  add_foreign_key "projects", "tutors"
+  add_foreign_key "tutors", "companies"
+  add_foreign_key "tutors", "users"
+  add_foreign_key "users", "roles"
 end

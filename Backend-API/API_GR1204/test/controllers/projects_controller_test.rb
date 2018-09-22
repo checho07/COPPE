@@ -12,7 +12,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create project" do
     assert_difference('Project.count') do
-      post projects_url, params: { project: { %progress_project: @project.%progress_project, area_id: @project.area_id, creationDate_project: @project.creationDate_project, entrepreneur_id: @project.entrepreneur_id, finalDate_project: @project.finalDate_project, name_project: @project.name_project, numMembers__project: @project.numMembers__project, tutor_id: @project.tutor_id } }, as: :json
+      post projects_url, params: { project: { area_id: @project.area_id, creationDate_project: @project.creationDate_project, entrepreneur_id: @project.entrepreneur_id, finalDate_project: @project.finalDate_project, name_project: @project.name_project, numMembers__project: @project.numMembers__project, progress_project: @project.progress_project, tutor_id: @project.tutor_id } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update project" do
-    patch project_url(@project), params: { project: { %progress_project: @project.%progress_project, area_id: @project.area_id, creationDate_project: @project.creationDate_project, entrepreneur_id: @project.entrepreneur_id, finalDate_project: @project.finalDate_project, name_project: @project.name_project, numMembers__project: @project.numMembers__project, tutor_id: @project.tutor_id } }, as: :json
+    patch project_url(@project), params: { project: { area_id: @project.area_id, creationDate_project: @project.creationDate_project, entrepreneur_id: @project.entrepreneur_id, finalDate_project: @project.finalDate_project, name_project: @project.name_project, numMembers__project: @project.numMembers__project, progress_project: @project.progress_project, tutor_id: @project.tutor_id } }, as: :json
     assert_response 200
   end
 

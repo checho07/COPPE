@@ -1,21 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name_tutor: MyString
-  lastname_tutor: MyString
-  cc_tutor: 1.5
-  phone_tutor: 1.5
-  age_tutor: 1
-  email_tutor: MyString
-  experence_tutor: 1
   company: one
+  user: one
 
 two:
-  name_tutor: MyString
-  lastname_tutor: MyString
-  cc_tutor: 1.5
-  phone_tutor: 1.5
-  age_tutor: 1
-  email_tutor: MyString
-  experence_tutor: 1
   company: two
+  user: two

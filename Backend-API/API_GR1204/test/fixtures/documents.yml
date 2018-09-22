@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_doc: MyString
+  creationDate_doc: 2018-09-22
+  project: one
+  file_type: one
+
+two:
+  name_doc: MyString
+  creationDate_doc: 2018-09-22
+  project: two
+  file_type: two

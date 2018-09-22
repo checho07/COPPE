@@ -46,6 +46,6 @@ class AdvisersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def adviser_params
-      params.require(:adviser).permit(:name_adviser, :lastname_adviser, :cc_adviser, :email_adviser, :phone_adviser, :age_adviser, :experience, :area_id)
+      params.require(:adviser).permit(:user_id, :area_id)
     end
 end

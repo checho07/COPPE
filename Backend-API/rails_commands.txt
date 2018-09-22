@@ -10,7 +10,7 @@ rails g model city    name_city:string depart_city:string zipCode_city:string
 rails g model course_type   modality_courseT:string
 
 
-
+heroku:pul$ar2007
 rails destroy model file_type
 
 

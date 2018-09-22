@@ -2,7 +2,7 @@
 
 one:
   name_project: MyString
-  %progress_project: 1
+  progress_project: 1
   numMembers__project: 1
   creationDate_project: 2018-09-22
   finalDate_project: 2018-09-22
@@ -12,7 +12,7 @@ one:
 
 two:
   name_project: MyString
-  %progress_project: 1
+  progress_project: 1
   numMembers__project: 1
   creationDate_project: 2018-09-22
   finalDate_project: 2018-09-22
