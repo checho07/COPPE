@@ -2,8 +2,8 @@ class CreateProjects < ActiveRecord::Migration[5.1]
   def change
     create_table :projects do |t|
       t.string :name_project
-      t.int :%progress_project
-      t.int :numMembers__project
+      t.integer :progress_project
+      t.integer :numMembers__project
       t.date :creationDate_project
       t.date :finalDate_project
       t.references :entrepreneur, foreign_key: true

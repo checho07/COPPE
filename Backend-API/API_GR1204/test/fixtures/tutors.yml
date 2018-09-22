@@ -2,34 +2,20 @@
 
 one:
   name_tutor: MyString
-  : MyString
   lastname_tutor: MyString
-  : MyString
-  cc_tutor: MyString
-  : 1.5
-  phone_tutor: MyString
-  : 1.5
-  age_tutor: MyString
-  : 
+  cc_tutor: 1.5
+  phone_tutor: 1.5
+  age_tutor: 1
   email_tutor: MyString
-  : MyString
-  experence_tutor: MyString
-  : 
+  experence_tutor: 1
   company: one
 
 two:
   name_tutor: MyString
-  : MyString
   lastname_tutor: MyString
-  : MyString
-  cc_tutor: MyString
-  : 1.5
-  phone_tutor: MyString
-  : 1.5
-  age_tutor: MyString
-  : 
+  cc_tutor: 1.5
+  phone_tutor: 1.5
+  age_tutor: 1
   email_tutor: MyString
-  : MyString
-  experence_tutor: MyString
-  : 
+  experence_tutor: 1
   company: two

@@ -1,0 +1,37 @@
+
+rails new API_GR1204 --api
+
+
+rails g file_type  fileType:string
+rails g model area  name_area:string
+ rails g model neighborhood  name_neihg:string zipCode_neigh:string
+ rails g model entity_type   type_entity:string
+rails g model city    name_city:string depart_city:string zipCode_city:string
+rails g model course_type   modality_courseT:string
+
+
+
+rails destroy model file_type
+
+
+
+rails g scaffold adviser  name_adviser:string lastname_adviser:string cc_adviser:string email_adviser:string  phone_adviser:float age_adviser:integer experience:integer  area:references
+rails g scaffold advisory  type_advisory:string  adviser:references project:references
+
+rails g scaffold entrepreneur name_entre:string lastname_entre:string cc_entre:float phone_entre:float address_entre:string age_entre:integer email_entre:string neighborhood:references 
+
+rails g scaffold course name_cour:string  duration_cour:float  date_cour:date link_cour:string teacher_cour:string course_type:references  area:references
+
+rails g scaffold file name_file:string creationDate_file:date project:references  file_type:references 
+
+rails g scaffold company name_company:string nit_company:string address_company:string email_company:string phone_company:float  entity_type:references
+
+rails g scaffold companies_city   company:references city:references
+
+rails g scaffold tutor name_tutor:string lastname_tutor:string cc_tutor:float phone_tutor:float  age_tutor:integer email_tutor:string experence_tutor:integer  company:references
+
+rails g scaffold entrep_course  course:references entrepreneur:references
+
+rails g scaffold project name_project:string %progress_project:integer numMembers__project:integer creationDate_project:date  finalDate_project:date entrepreneur:references tutor:references area:references 
+
+rails destroy scaffold file_type

@@ -5,7 +5,7 @@ class CreateCompanies < ActiveRecord::Migration[5.1]
       t.string :nit_company
       t.string :address_company
       t.string :email_company
-      t.string :phone_company
+      t.float :phone_company
       t.references :entity_type, foreign_key: true
 
       t.timestamps

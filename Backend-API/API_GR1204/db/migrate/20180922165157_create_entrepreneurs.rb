@@ -6,7 +6,7 @@ class CreateEntrepreneurs < ActiveRecord::Migration[5.1]
       t.float :cc_entre
       t.float :phone_entre
       t.string :address_entre
-      t.string :age_entre_int
+      t.integer :age_entre
       t.string :email_entre
       t.references :neighborhood, foreign_key: true
 
