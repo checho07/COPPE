@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_project: MyString
+  progress_project: 1
+  numMembers__project: 1
+  creationDate_project: 2018-09-22
+  finalDate_project: 2018-09-22
+  entrepreneur: one
+  tutor: one
+  area: one
+
+two:
+  name_project: MyString
+  progress_project: 1
+  numMembers__project: 1
+  creationDate_project: 2018-09-22
+  finalDate_project: 2018-09-22
+  entrepreneur: two
+  tutor: two
+  area: two
