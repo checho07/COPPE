@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_company: MyString
+  nit_company: MyString
+  address_company: MyString
+  email_company: MyString
+  phone_company: MyString
+  entity_type: one
+
+two:
+  name_company: MyString
+  nit_company: MyString
+  address_company: MyString
+  email_company: MyString
+  phone_company: MyString
+  entity_type: two

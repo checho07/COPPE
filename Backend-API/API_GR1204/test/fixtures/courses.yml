@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_cour: MyString
+  duration_cour: 1.5
+  date_cour: 2018-09-15
+  link_cour: MyString
+  teacher_cour: MyString
+  course_type: one
+  area: one
+
+two:
+  name_cour: MyString
+  duration_cour: 1.5
+  date_cour: 2018-09-15
+  link_cour: MyString
+  teacher_cour: MyString
+  course_type: two
+  area: two

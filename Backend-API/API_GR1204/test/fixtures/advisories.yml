@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type_advisory: MyString
+  adviser: one
+  project: one
+
+two:
+  type_advisory: MyString
+  adviser: two
+  project: two

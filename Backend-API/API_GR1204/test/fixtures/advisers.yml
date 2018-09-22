@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_adviser: MyString
+  lastname_adviser: MyString
+  cc_adviser: MyString
+  email_adviser: MyString
+  phone_adviser: 1.5
+  age_adviser: 
+  experience: 
+  area: one
+
+two:
+  name_adviser: MyString
+  lastname_adviser: MyString
+  cc_adviser: MyString
+  email_adviser: MyString
+  phone_adviser: 1.5
+  age_adviser: 
+  experience: 
+  area: two
