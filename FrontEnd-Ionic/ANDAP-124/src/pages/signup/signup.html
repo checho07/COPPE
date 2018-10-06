@@ -12,14 +12,42 @@
     <ion-list>
 
       <ion-item>
-        <ion-label fixed>{{ 'NAME' | translate }}</ion-label>
+        <ion-label fixed>{{ 'Nombre' | translate }}</ion-label>
         <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
+        <ion-label fixed>{{ 'Apellido' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.lastname" name="lastname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'CC' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.CC" name="CC"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'Telefono' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.phone" name="phone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'Edad' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.age" name="age"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label fixed>{{ 'Email' | translate }}</ion-label>
         <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'Experiencia' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.experience" name="experience"></ion-input>
+      </ion-item>
+
+      
 
       <!--
       Want to add a Username? Here you go:
@@ -31,7 +59,7 @@
       -->
 
       <ion-item>
-        <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
+        <ion-label fixed>{{ 'Contraseña' | translate }}</ion-label>
         <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
       </ion-item>
 
