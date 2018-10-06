@@ -160,13 +160,6 @@ ActiveRecord::Schema.define(version: 20180922211453) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "rols", force: :cascade do |t|
-    t.string "name_rol"
-    t.string "desc_rol"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "tutors", force: :cascade do |t|
     t.bigint "company_id"
     t.bigint "user_id"

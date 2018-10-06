@@ -1,0 +1,7 @@
+{
+  "name": "ANDAP-124",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
