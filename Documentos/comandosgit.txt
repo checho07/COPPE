@@ -14,17 +14,20 @@ rails g model rol  name_rol:string desc_rol:string
 
 rails destroy model file_type
 
-rails g scaffold file name_file:string creationDate_file:date project:references  file_type:references 
 rails g scaffold company name_company:string nit_company:string address_company:string email_company:string phone_company:float  entity_type:references
-rails g scaffold user  pass_user:float  name_user:string lasname_user:string cc_user:float phone_user:integer  age_user:intger  email_user:string experience_user:integ
-rails g scaffold adviser user:references area:references
-rails g scaffold tutor   company:references  user:references
-rails g scaffold project name_project:string  progress_project:integer numMembers__project:integer creationDate_project:date  finalDate_project:date entrepreneur:references tutor:references area:references
-rails g scaffold course name_cour:string  duration_cour:float  date_cour:date link_cour:string teacher_cour:string course_type:references  area:references
-rails g scaffold advisory  type_advisory:string  adviser:references project:references
-rails g scaffold companies_city   company:references city:references
+rails g scaffold user  pass_user:float  name_user:string lasname_user:string cc_user:float phone_user:integer  age_user:integer  email_user:string experience_user:integer role:reference
 rails g scaffold entrepreneur user:references neighborhood:references 
+rails g scaffold adviser user:references area:references
+rails g scaffold course name_cour:string  duration_cour:float  date_cour:date link_cour:string teacher_cour:string course_type:references  area:references
+rails g scaffold tutor   company:references  user:references
 rails g scaffold entrep_course  course:references entrepreneur:references
+rails g scaffold companies_city   company:references city:references
+rails g scaffold project name_project:string  progress_project:integer numMembers__project:integer creationDate_project:date  finalDate_project:date entrepreneur:references tutor:references area:references
+rails g scaffold file name_file:string creationDate_file:date project:references  file_type:references 
+rails g scaffold advisory  type_advisory:string  adviser:references project:references
+
+
+
 
 
 
