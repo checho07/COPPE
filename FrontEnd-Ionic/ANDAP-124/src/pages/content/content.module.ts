@@ -1,6 +1,11 @@
+
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
+import { IonicStepperModule } from 'ionic-stepper';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { ContentPage } from './content';
 
@@ -9,6 +14,7 @@ import { ContentPage } from './content';
     ContentPage,
   ],
   imports: [
+    IonicStepperModule,
     IonicPageModule.forChild(ContentPage),
     TranslateModule.forChild()
   ],
