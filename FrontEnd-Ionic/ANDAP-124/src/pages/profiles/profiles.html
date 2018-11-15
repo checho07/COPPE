@@ -1,0 +1,26 @@
+<ion-content scroll="false">
+  <!-- <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+    <div class="splash-intro">
+      {{ 'PROFILES_TITLE' | translate }}
+    </div>
+  </div> -->
+  <ion-content class="card-background-page">
+      <ion-card (click)="welcome(1)">
+        <img src="../assets/img/emprenProfile.jpg"/>
+        <div class="card-title">  {{ 'ENTREPRENEUR' | translate }}</div>
+      </ion-card>
+    
+      <ion-card (click)="welcome(2)">
+        <img src="../assets/img/tutorProfile.jpg"/>
+        <div class="card-title"> {{ 'TUTOR' | translate }}</div>
+      </ion-card>
+    
+      <ion-card (click)="welcome(3)">
+        <img src="../assets/img/advisProfile.jpg"/>
+        <div class="card-title"> {{ 'ADVISER' | translate }}</div>
+      </ion-card>
+    
+    </ion-content>
+</ion-content>

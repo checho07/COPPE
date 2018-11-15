@@ -8,6 +8,13 @@
   "TAB1_TITLE": "Items",
   "TAB2_TITLE": "Buscar",
   "TAB3_TITLE": "Ajustes",
+  
+  "ENTREPRENEUR": "Emprendedor",
+  "TUTOR": "Tutor",  
+  "ADVISER": "Asesor",  
+  "FORGOT_PASSWORD":"¿Olvidaste tu clave?",
+  "NEW_HERE":"¿Nuevo aqui?",
+  "HAVE_ACCOUNT": "Ya tengo una cuenta.",
 
   "MAP_TITLE": "Mapa",
 
@@ -29,6 +36,8 @@
   "SETTINGS_PAGE_PROFILE": "Editar Perfil",
 
   "WELCOME_TITLE": "Bienvenido/a",
+  "WELCOME_INTRO": "El punto incial hacia el exito",
+  "PROFILES_TITLE": "Selecciona tu perfil",
 
   "LOGIN_TITLE": "Iniciar sesión",
   "LOGIN_ERROR": "No se ha podido iniciar sesión. Por favor revisa la información de la cuenta e inténtalo de nuevo.",

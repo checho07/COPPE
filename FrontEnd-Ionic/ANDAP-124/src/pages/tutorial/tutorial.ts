@@ -51,7 +51,7 @@ export class TutorialPage {
   }
 
   startApp() {
-    this.navCtrl.setRoot('WelcomePage', {}, {
+    this.navCtrl.setRoot('ProfilesPage', {}, {
       animate: true,
       direction: 'forward'
     });
