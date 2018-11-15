@@ -1,13 +1,56 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Content
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content>
+    <div padding-horizontal text-center class="animated fadeInDown">
+          <h2 ion-text class="text-secondary">
+          <strong>{{'CREATE_PROJECT'| translate }}</strong>
+        </h2>
+      </div>
+  <ion-stepper #stepper (selectIndexChange)="selectChange($event)" mode='horizontal' >
+    <ion-step label="1"
+              description="Step1 description" icon = 'clipboard' >
 
-<ion-content padding>
-  <p>
-    This is a perfect starting point for a page with primarily text content. The body is padded nicely and ready for prose.
-  </p>
+              <form (ngSubmit)="doLogin()" [formGroup]="projectForm">
+                  <ion-list>
+
+                    <ion-item *ngFor="let item of dataItems" >
+                      <ion-label floating>{{ item["title"] | translate }}</ion-label>
+                      <ion-input clearInput=true  type="{{item['type']}}" formControlName="{{item['ngmodel']}}" name="item['name']"></ion-input>
+                     </ion-item>
+                     <ion-item>
+                      <ion-label>{{ '%' | translate }} </ion-label>
+                      <ion-range min="0" max="100" formControlName="progress" color="secondary" pin="true">
+                        <ion-icon small range-left name="flag"></ion-icon>
+                        <ion-icon range-right name="trophy"></ion-icon>
+                      </ion-range>
+                     </ion-item>
+
+
+                    <div padding>
+                      <button ion-button color="primary" block  ionicStepperNext [disabled]="!projectForm.valid">{{ 'NEXT' | translate }}</button>
+                    </div>
+
+                  </ion-list>
+
+                </form>
+
+    </ion-step>
+    <ion-step label="2"
+              description="Step1 description" icon = 'attach'>
+      <h2>Step2 Content</h2>
+      <p>Step2 Content</p>
+      <button ion-button color="light" small ionicStepperPrevious>Previous</button>
+    </ion-step>
+    <ion-step label="3"
+    description="Step1 description" icon = 'paper'>
+  <h2>Step2 Content</h2>
+  <p>Step2 Content</p>
+  <button ion-button color="light" small ionicStepperPrevious>Previous</button>
+  </ion-step>
+  <ion-step label="4"
+  description="Step1 description" icon = 'done-all'>
+  <h2>Step2 Content</h2>
+  <p>Step2 Content</p>
+  <button ion-button color="light" small ionicStepperPrevious>Previous</button>
+  </ion-step>
+  </ion-stepper>
 </ion-content>
+

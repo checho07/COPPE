@@ -8,13 +8,21 @@
   "TAB1_TITLE": "Items",
   "TAB2_TITLE": "Buscar",
   "TAB3_TITLE": "Ajustes",
-  
+
   "ENTREPRENEUR": "Emprendedor",
-  "TUTOR": "Tutor",  
-  "ADVISER": "Asesor",  
+  "TUTOR": "Tutor",
+  "ADVISER": "Asesor",
   "FORGOT_PASSWORD":"¿Olvidaste tu clave?",
   "NEW_HERE":"¿Nuevo aqui?",
   "HAVE_ACCOUNT": "Ya tengo una cuenta.",
+
+  "CREATE_PROJECT":"Registra tu Proyecto",
+  "PROJECT_NAME":"Nombre de tu Proyecto",
+  "%":"% de Avance de tu proyecto",
+  "#_TEAM":"Numero de Integrantes",
+  "CREATE_DATE":"Fecha Creacion",
+  "AREA":"Area",
+  "NEXT":"Siguiente",
 
   "MAP_TITLE": "Mapa",
 
