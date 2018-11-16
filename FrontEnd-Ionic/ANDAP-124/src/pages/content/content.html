@@ -12,7 +12,9 @@
                   <ion-list>
 
                     <ion-item *ngFor="let item of dataItems" >
-                      <ion-label floating>{{ item["title"] | translate }}</ion-label>
+                      <ion-label floating>
+                          <ion-icon name="{{item['icon']}}" item-start class="text-primary"></ion-icon>
+                        {{ item["title"] | translate }}</ion-label>
                       <ion-input clearInput=true  type="{{item['type']}}" formControlName="{{item['ngmodel']}}" name="item['name']"></ion-input>
                      </ion-item>
                      <ion-item>
@@ -25,7 +27,7 @@
 
 
                     <div padding>
-                      <button ion-button color="primary" block  ionicStepperNext [disabled]="!projectForm.valid">{{ 'NEXT' | translate }}</button>
+                      <button ion-button color="primary" block  ionicStepperNext [disabled]="projectForm.valid">{{ 'NEXT' | translate }}</button>
                     </div>
 
                   </ion-list>
@@ -35,10 +37,28 @@
     </ion-step>
     <ion-step label="2"
               description="Step1 description" icon = 'attach'>
-      <h2>Step2 Content</h2>
-      <p>Step2 Content</p>
-      <button ion-button color="light" small ionicStepperPrevious>Previous</button>
-    </ion-step>
+      <ion-list>
+          <ion-item *ngFor="let item of files" >
+            <ion-thumbnail item-start>
+              <img src="{{item.image}}">
+            </ion-thumbnail>
+            <h2>{{item.title}}</h2>
+            <p>{{item.description}}</p>
+            <button ion-button clear item-end (click)="openFile()">Subir</button>
+          </ion-item>
+        </ion-list>
+        <div text-left padding-left>
+            <button ion-button icon-start ionicStepperPrevious >
+                Anterior
+              </button>
+
+                  <button ion-button icon- padding-left ionicStepperNext>
+                      SIguiente
+                    </button>
+
+        </div>
+       </ion-step>
+
     <ion-step label="3"
     description="Step1 description" icon = 'paper'>
   <h2>Step2 Content</h2>
