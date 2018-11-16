@@ -2,7 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { TranslateService } from '@ngx-translate/core';
-import { Config, Nav, Platform } from 'ionic-angular';
+import { Config, Nav, Platform, LoadingController } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 import { FirstRunPage } from '../pages';
 import { Settings } from '../providers';
@@ -21,6 +22,7 @@ import { Settings } from '../providers';
           {{p.title}}
         </button>
       </ion-list>
+   <button ion-button (click)="logOut()" block outline>Salir</button>
     </ion-content>
 
   </ion-menu>
@@ -45,10 +47,26 @@ export class MyApp {
     { title: 'Search', component: 'SearchPage' }
   ]
 
-  constructor(private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
+  constructor(private afAuth: AngularFireAuth, private loadingCtrl: LoadingController ,private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
+   
+    
     platform.ready().then(() => {
+      let loading = this.loadingCtrl.create({content:'Cargando sesión.'})
+      loading.present();
+
+      this.afAuth.authState.subscribe(user => {
+       
+        if(user !== null){
+          this.rootPage = 'ListMasterPage';
+          loading.dismiss();
+        }else{
+          loading.dismiss();
+        }
+        
+      });
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
+     
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
@@ -57,7 +75,8 @@ export class MyApp {
 
   initTranslate() {
     // Set the default language for translation strings, and the current language.
-    this.translate.setDefaultLang('en');
+    
+        this.translate.setDefaultLang('en');
     const browserLang = this.translate.getBrowserLang();
 
     if (browserLang) {
@@ -80,10 +99,17 @@ export class MyApp {
       this.config.set('ios', 'backButtonText', values.BACK_BUTTON_TEXT);
     });
   }
+    logOut(){
+    this.afAuth.auth.signOut().then(()=>{
+      this.nav.setRoot('LoginPage')
+    })
+  }
 
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+
+
 }

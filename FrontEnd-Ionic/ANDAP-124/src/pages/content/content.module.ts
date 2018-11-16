@@ -4,7 +4,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
 import { IonicStepperModule } from 'ionic-stepper';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { ContentPage } from './content';

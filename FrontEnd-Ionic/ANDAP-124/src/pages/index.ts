@@ -1,4 +1,5 @@
 
+
 // The page the user lands on after opening the app and without a session
 export const FirstRunPage = 'TutorialPage';
 
@@ -6,6 +7,7 @@ export const FirstRunPage = 'TutorialPage';
 // Change this if not using tabs
 export const MainPage = 'TabsPage';
 export const ProfilesPage = 'ProfilesPage';
+export const LoginPage = 'LoginPage';
 
 // The initial root pages for our tabs (remove if not using tabs)
 export const Tab1Root = 'ListMasterPage';

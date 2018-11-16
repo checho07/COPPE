@@ -14,12 +14,25 @@ import { Settings, User, Api } from '../providers';
 import { MyApp } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FileChooser } from '@ionic-native/file-chooser';
+import { NativeStorage } from '@ionic-native/native-storage';
+import { AngularFireModule } from 'angularfire2';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+
+export const FIREBASE_CONFIG ={
+  apiKey: "AIzaSyC5dtzQocQVo_4alvaCCqQQIAf20EcehoQ",
+    authDomain: "coppe-486e6.firebaseapp.com",
+    databaseURL: "https://coppe-486e6.firebaseio.com",
+    projectId: "coppe-486e6",
+    storageBucket: "coppe-486e6.appspot.com",
+    messagingSenderId: "662485066174"
+};
 
 export function provideSettings(storage: Storage) {
   /**
@@ -52,8 +65,11 @@ export function provideSettings(storage: Storage) {
         deps: [HttpClient]
       }
     }),
-    IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicModule.forRoot(MyApp),    
+    IonicStorageModule.forRoot(),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -67,6 +83,7 @@ export function provideSettings(storage: Storage) {
     SplashScreen,
     StatusBar,
     FileChooser,
+    NativeStorage,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler }
