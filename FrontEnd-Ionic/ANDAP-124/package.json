@@ -23,6 +23,8 @@
     "@ionic-native/camera": "4.3.3",
     "@ionic-native/core": "~4.15.0",
     "@ionic-native/file-chooser": "^4.17.0",
+    "@ionic-native/fingerprint-aio": "^4.20.0",
+    "@ionic-native/keyboard": "^4.20.0",
     "@ionic-native/native-storage": "^4.17.0",
     "@ionic-native/splash-screen": "~4.15.0",
     "@ionic-native/status-bar": "~4.15.0",
@@ -32,6 +34,7 @@
     "angularfire2": "^5.1.0",
     "cordova-android": "7.1.2",
     "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-fingerprint-aio": "^2.0.0",
     "cordova-plugin-ionic-keyboard": "^2.1.3",
     "cordova-plugin-ionic-webview": "^2.2.3",
     "cordova-plugin-nativestorage": "2.3.2",
@@ -42,7 +45,10 @@
     "ionic-angular": "3.9.2",
     "ionic-stepper": "^1.1.0",
     "ionicons": "3.0.0",
-    "rxjs": "5.5.11",
+    "ng-circle-progress": "^1.0.0",
+    "ng-lottie": "^0.3.2",
+    "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.5.3",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.26"
   },
@@ -62,7 +68,8 @@
       },
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-filechooser": {},
-      "cordova-plugin-nativestorage": {}
+      "cordova-plugin-nativestorage": {},
+      "cordova-plugin-fingerprint-aio": {}
     },
     "platforms": [
       "android"

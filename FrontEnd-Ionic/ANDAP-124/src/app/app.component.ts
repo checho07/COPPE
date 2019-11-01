@@ -7,6 +7,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 import { FirstRunPage } from '../pages';
 import { Settings } from '../providers';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   template: `<ion-menu [content]="content">
@@ -29,7 +30,7 @@ import { Settings } from '../providers';
   <ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage = FirstRunPage;
+  rootPage = 'ProfilesPage';
 
   @ViewChild(Nav) nav: Nav;
 
@@ -51,13 +52,14 @@ export class MyApp {
    
     
     platform.ready().then(() => {
+      this.statusBar.hide();
       let loading = this.loadingCtrl.create({content:'Cargando sesión.'})
       loading.present();
 
       this.afAuth.authState.subscribe(user => {
        
         if(user !== null){
-          this.rootPage = 'ListMasterPage';
+          this.rootPage = 'ProfilesPage';
           loading.dismiss();
         }else{
           loading.dismiss();

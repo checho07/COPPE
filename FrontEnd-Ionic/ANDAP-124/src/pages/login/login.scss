@@ -1,4 +1,113 @@
 page-login {
 
+    background-color: black;
 
+    .scroll-content
+    {
+      padding-bottom: 0 !important;
+    }
+
+    video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: 100%;
+        z-index: -100;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    ion-content{
+        // background-image: linear-gradient(225deg, #b739f3 0%, #6850fb 100%);
+        background-color: #eaeaea !important;
+     }
+
+     .userType{
+         font-family: 'comfortaa';
+         font-size: 30px;
+         font-weight: bold;
+     }
+
+     .signcard
+     {
+         margin-top: 10%;
+         height: 70%;
+         border-radius: 13px;
+         box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.575);
+         background-color: rgba(128, 128, 128, 0.459);
+         z-index:2;
+ 
+         
+     }
+ 
+     .detailsholder{
+         ion-label{
+           
+             color:color($colors,primary)
+         }
+         ion-input{
+             background-color: rgba(32, 31, 31, 0.664);
+             border-radius: 4px;
+ 
+         }
+     }
+ 
+     .imgholder{
+         img{
+             width: 100px;
+             height: 100px; 
+             //border-radius: 50%;
+            
+             //top:-10px;
+             position: relative;
+         }
+         width: 100px;
+         z-index: 0;
+         position: relative;
+         top:40px;
+         margin-left: 35%;
+         background: rgba(128, 128, 128, 0.473);
+         border-radius: 50%;
+        // margin-right: auto
+        
+     }
+ 
+     .segment-button.segment-activated {
+        // border-color: #b739f3 !important;
+         opacity: 1;
+       //  background-image: linear-gradient(225deg, #b739f3 0%, #6850fb 100%);
+        // color: white !important;
+     }
+ 
+     .loginbtn{
+         border-radius: 4px;
+         height: 50px;
+         background-image: linear-gradient(225deg, #f0be1b 0%, #c58530 100%);
+         margin-top: 5%;
+     }
+ 
+     .segbtn1{
+         border-top-left-radius:  13px;
+     }
+ 
+     .segbtn2{
+         border-top-right-radius:  13px;
+     }
+
+     h2{
+        color: color($colors,primary);
+       
+     }
+
+     .passwordIcon{
+        font-size:2rem !important;
+        position: relative !important;
+        left: 44%!important;
+        color: color($colors,primary);
+        margin: 0 auto !important;
+      }
+
+ 
 }

@@ -10,7 +10,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStepperModule } from 'ionic-stepper';
 import { Items } from '../mocks/providers/items';
-import { Settings, User, Api } from '../providers';
+import { Settings, Api } from '../providers';
 import { MyApp } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FileChooser } from '@ionic-native/file-chooser';
@@ -18,6 +18,9 @@ import { NativeStorage } from '@ionic-native/native-storage';
 import { AngularFireModule } from 'angularfire2';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
+import { OverlayPortal } from 'ionic-angular/umd/components/app/overlay-portal';
+import { ClickBlock } from 'ionic-angular/umd/components/app/click-block';
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -69,16 +72,16 @@ export function provideSettings(storage: Storage) {
     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule   
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp
   ],
   providers: [
+    FingerprintAIO,
     Api,
     Items,
-    User,
     Camera,
     SplashScreen,
     StatusBar,

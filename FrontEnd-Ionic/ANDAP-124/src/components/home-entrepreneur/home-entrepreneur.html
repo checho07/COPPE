@@ -1,0 +1,93 @@
+<ion-card>
+        <img src="../../assets/img/tutorProfile.jpg" />  
+        <ion-card-header>
+           <ion-card-title >Mi proyecto</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p> Actualiza los datos de proyecto.</p>
+        </ion-card-content>
+        <ion-row no-padding>         
+                <ion-col text-center>
+                  <button ion-button clear small color="secondary" icon-start>
+                    <ion-icon name='eye'></ion-icon>
+                    {{courses}} visitas
+                  </button>
+                </ion-col>                
+              </ion-row>
+            
+</ion-card>
+<ion-card>
+        <img src="../../assets/img/emprenProfile.jpg" />    
+        <ion-card-content>
+          <ion-card-title>
+            Mis cursos
+          </ion-card-title>
+          <p>
+            Encuetra el listado de cursos al que estas suscrito
+          </p>
+        </ion-card-content>    
+        <ion-row no-padding>         
+          <ion-col text-center>
+            <button ion-button clear small color="secondary" icon-start>
+              <ion-icon name='bookmarks'></ion-icon>
+              {{courses}} suscrito
+            </button>
+          </ion-col>
+        </ion-row>    
+      </ion-card>
+      <ion-item-divider >
+          Competencias blandas
+    </ion-item-divider>
+            <ion-card>
+                    <ion-card-header>
+                        
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ion-row>
+                                <ion-col >                     
+                                        <circle-progress
+                                    [percent]="85"
+                                    [radius]="50"
+                                    [outerStrokeWidth]="16"
+                                    [innerStrokeWidth]="5"
+                                    [outerStrokeColor]="'#78C000'"
+                                    [innerStrokeColor]="'#C7E596'"
+                                    [animation]="true"
+                                    [animationDuration]="1000"
+                                    [responsive]="true"
+                                    lazy="true"
+                                  ></circle-progress>                     
+                                   </ion-col>
+                                   <ion-col >
+                                       <h2 style="font-size: 20px; font-family: comfortaa" text-wrap>Buena comunicación</h2>
+                                   </ion-col>
+                        </ion-row>
+                            
+                    </ion-card-content>
+                </ion-card>
+                <ion-card>
+                        <ion-card-header>
+                            
+                        </ion-card-header>
+                        <ion-card-content>
+                            <ion-row>
+                                    <ion-col >                     
+                                            <circle-progress
+                                        [percent]="25"
+                                        [radius]="50"
+                                        [outerStrokeWidth]="16"
+                                        [innerStrokeWidth]="5"
+                                        [outerStrokeColor]="'#c42f2f'"
+                                        [innerStrokeColor]="'#9e5959'"
+                                        [animation]="true"
+                                        [animationDuration]="1000"
+                                        [responsive]="true"
+                                      ></circle-progress>                     
+                                       </ion-col>
+                                       <ion-col >
+                                           <h2 style="font-size: 20px; font-family: comfortaa" text-wrap>Trabajo en equipo</h2>
+                                       </ion-col>
+                            </ion-row>
+                                
+                        </ion-card-content>
+                    </ion-card>

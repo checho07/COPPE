@@ -43,6 +43,12 @@ $colors: (
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
+$alert-md-border-radius:29px;
+$alert-button-line-height:10px;
+$alert-button-font-size:16px;
+$alert-md-background-color: #ada7a7dc;
+$alert-md-button-text-color:color($colors,primary);
+$alert-md-message-text-color:white;
 
 
 

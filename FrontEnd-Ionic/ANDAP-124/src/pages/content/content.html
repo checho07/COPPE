@@ -1,6 +1,7 @@
 <ion-content>
+ 
     <div padding-horizontal text-center class="animated fadeInDown">
-          <h2 ion-text class="text-secondary">
+          <h2 ion-text class="text-secondary" style="font-size: 20px">
           <strong>{{'CREATE_PROJECT'| translate }}</strong>
         </h2>
       </div>
@@ -27,7 +28,7 @@
 
 
                     <div padding>
-                      <button ion-button color="primary" block  ionicStepperNext [disabled]="projectForm.valid">{{ 'NEXT' | translate }}</button>
+                      <button ion-button color="primary" block  ionicStepperNext [disabled]="!projectForm.valid">{{ 'NEXT' | translate }}</button>
                     </div>
 
                   </ion-list>
@@ -37,7 +38,7 @@
     </ion-step>
     <ion-step label="2"
               description="Step1 description" icon = 'attach'>
-      <ion-list>
+      <!-- <ion-list>
           <ion-item *ngFor="let item of files" >
             <ion-thumbnail item-start>
               <img src="{{item.image}}">
@@ -46,13 +47,40 @@
             <p>{{item.description}}</p>
             <button ion-button clear item-end (click)="openFile()">Subir</button>
           </ion-item>
-        </ion-list>
+        </ion-list> -->
+        <ion-card>
+
+          <ion-card-header>
+            <ion-card-title>Documentación</ion-card-title>
+          </ion-card-header>
+         
+        
+          <img src="assets/imgs/docs.jpg">
+        
+          <ion-card-content>
+            <p>Ingresa un link de Gogole drive en donde tengas alojados los documentos relacionados a tu proyecto como:</p>
+            <ion-list >
+              <ion-item *ngFor="let item of files"  >
+                {{item.title}}
+              </ion-item>
+            </ion-list>
+            <ion-item>
+                <ion-label floating>
+                    <ion-icon name="attach" item-start class="text-primary"></ion-icon>
+                  Link Google Drive</ion-label>
+                <ion-input clearInput=true [(ngModel)]="url"  type="url"  name="url"></ion-input>
+               </ion-item>
+          </ion-card-content>        
+          
+      
+        
+        </ion-card>
         <div text-left padding-left>
             <button ion-button icon-start ionicStepperPrevious >
                 Anterior
               </button>
 
-                  <button ion-button icon- padding-left ionicStepperNext>
+                  <button ion-button icon- padding-left ionicStepperNext [disabled]="!url">
                       SIguiente
                     </button>
 
@@ -61,15 +89,46 @@
 
     <ion-step label="3"
     description="Step1 description" icon = 'paper'>
-  <h2>Step2 Content</h2>
-  <p>Step2 Content</p>
-  <button ion-button color="light" small ionicStepperPrevious>Previous</button>
+    <h3 text-wrap>Test de competencias blandas </h3>
+    <ion-item-divider></ion-item-divider>
+    <div *ngFor="let item of [1,2,3,4]" >
+      <ion-card>
+          
+              <ion-card-header> Pregunta </ion-card-header>        
+              <ion-card-content> Espacio para la descripcion de la pregutna</ion-card-content>        
+              <ion-item-divider></ion-item-divider>
+              <ion-list radio-group no-lines padding>        
+              <ion-item >        
+              <ion-radio value=”A” ></ion-radio>        
+              <ion-label>A – Opcion A</ion-label>        
+              </ion-item>        
+              <ion-item>        
+              <ion-radio value=”B”> </ion-radio>        
+              <ion-label>B – Opcion B</ion-label>        
+              </ion-item>        
+              <ion-item >        
+              <ion-radio value=”C” ></ion-radio>        
+              <ion-label>C – Opcion C</ion-label>        
+              </ion-item> 
+             </ion-list>
+      </ion-card>
+   
+      </div>
+        
+        <button ion-button  float-right ionicStepperNext>Guardar</button>
+  <button ion-button color="light" small ionicStepperPrevious>Anterior</button>
   </ion-step>
   <ion-step label="4"
-  description="Step1 description" icon = 'done-all'>
-  <h2>Step2 Content</h2>
-  <p>Step2 Content</p>
-  <button ion-button color="light" small ionicStepperPrevious>Previous</button>
+  description="Step1 description" icon = 'done-all'>  
+ 
+  <ion-item text-center>     
+      <img src="assets/imgs/goal.png" alt="" height="200px" >
+  </ion-item>
+  <p text-center>Excelente, ahora tu proyecto esta listo para ser publicado, los tutores interesados podran apadrinarlo.</p>
+  <p text-center>Recuerda que en cualquier momento podras modificar o actualizar la información.</p>
+  <p text-center>¡Exitos en tu proyecto!</p>
+ 
+  <button ion-button  block ionicStepperPrevious (click)="saveProject()">Publicar</button>
   </ion-step>
   </ion-stepper>
 </ion-content>

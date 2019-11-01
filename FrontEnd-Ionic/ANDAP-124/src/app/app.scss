@@ -80,3 +80,28 @@ margin-bottom: 150px;
   margin: 50px;
   color: color($colors,primary)
 }
+
+.scroll-content
+{
+  padding-bottom: 0 !important;
+}
+
+@font-face {
+  font-family: 'coolvetica';
+  src: url('../assets/fonts/SUBSCRIBER-Regular.otf');
+}
+
+@font-face {
+  font-family: 'comfortaa';
+  src: url('../assets/fonts/Comfortaa-Light.ttf');
+}
+
+ h2{
+  font-family: 'coolvetica';
+  font-weight: 200;
+  font-size: 80px
+}
+
+*{
+  font-family: 'comfortaa';
+}

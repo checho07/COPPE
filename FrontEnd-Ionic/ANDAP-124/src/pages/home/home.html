@@ -1,0 +1,29 @@
+
+<ion-header>
+    
+  </ion-header>
+<ion-content>
+    <div *ngIf="segment == 'home'" >  
+      <home-entrepreneur *ngIf="who == 0" ></home-entrepreneur>
+      <home-tutor  *ngIf="who == 1"></home-tutor>
+      <home-adviser  *ngIf="who == 2"></home-adviser>
+    </div>
+  </ion-content>
+<ion-footer>
+    <ion-toolbar>
+         <ion-segment [(ngModel)]="segment" color="secondary">
+           <ion-segment-button value="home">
+             <ion-icon name="home"></ion-icon>
+           </ion-segment-button>
+           <ion-segment-button value="news">
+             <ion-icon name="paper"></ion-icon>
+           </ion-segment-button>
+           <ion-segment-button value="courses">
+               <ion-icon name="book"></ion-icon>
+             </ion-segment-button>
+             <ion-segment-button value="settings">
+                 <ion-icon name="cog"></ion-icon>
+               </ion-segment-button>
+         </ion-segment>
+       </ion-toolbar> 
+ </ion-footer>  

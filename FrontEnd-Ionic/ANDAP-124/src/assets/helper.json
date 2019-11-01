@@ -1,0 +1,23 @@
+{
+    "slides":
+    [
+        {
+            "name":"Emprendedor",
+            "image":"assets/img/slide1.png",
+            "description":"Si tienes una idea de negocio y necesitas ayuda.",
+            "bgClass":"slide1BG"
+        },
+        {
+            "name":"Tutor",
+            "image":"assets/img/slide2.png",
+            "description":"Si eres un gran empresario y quieres apoyar a un emprendedor.",
+            "bgClass":"slide2BG"
+        },
+        {
+            "name":"Asesor",
+            "image":"assets/img/slide3.png",
+            "description":"Ayuda a los eprendedores a tomar buenas decisiones.",
+            "bgClass":"slide3BG"
+        }
+    ]
+}

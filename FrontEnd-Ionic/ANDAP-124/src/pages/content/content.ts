@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { UserProvider } from './../../providers/user/user';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, ToastController, LoadingController, NavParams } from 'ionic-angular';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { FileChooser } from '@ionic-native/file-chooser';
+import { IonicStepperComponent } from 'ionic-stepper';
 
 @IonicPage()
   @Component({
@@ -11,13 +13,21 @@ import { FileChooser } from '@ionic-native/file-chooser';
 export class ContentPage {
 
    public  projectForm: FormGroup;
-
   dataItems:object[];
   files:object[];
+  public url:string;
+  @ViewChild('stepper')stepper:IonicStepperComponent;
 
   constructor(public navCtrl: NavController,
               private formBuilder:FormBuilder,
+              private userService:UserProvider,
+              private toastCtrl:ToastController,
+              private loadingCtrl:LoadingController,
+              private navParams:NavParams,
               private fileChooser: FileChooser) {
+
+               
+              
 
                 this.projectForm = this.formBuilder.group({
                   name:["",[Validators.required]],
@@ -43,7 +53,30 @@ export class ContentPage {
    };
   selectChange(e) {
     console.log(e);
-  }
+    
+  };
+  saveProject(){
+    let loading = this.loadingCtrl.create({ 
+      content: 'Guardando...'
+    });
+    loading.present();
+    this.userService.saveProject(this.projectForm.value,this.url).then(res=>{
+      loading.dismiss();
+      this.navCtrl.setRoot('HomePage');      
+    },err =>{
+      loading.dismiss();
+      this.presentToast(err)
+    })
+  };
+  presentToast(msj : string){
+    let toast = this.toastCtrl.create({
+      message: msj,
+      duration: 3000,
+      position: 'bottom'
+    });
+    toast.present(); 
+  };
+
   openFile(){
     this.fileChooser.open()
     .then(uri =>{

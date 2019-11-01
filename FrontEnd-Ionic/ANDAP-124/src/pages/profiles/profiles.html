@@ -1,4 +1,4 @@
-<ion-content scroll="false">
+
   <!-- <div class="splash-bg"></div>
   <div class="splash-info">
     <div class="splash-logo"></div>
@@ -6,8 +6,8 @@
       {{ 'PROFILES_TITLE' | translate }}
     </div>
   </div> -->
-  <ion-content class="card-background-page">
-      <ion-card (click)="welcome(1)">
+  <ion-content class="card-background-page" class="{{slideBgClass}}">
+      <!-- <ion-card (click)="welcome(1)">
         <img src="../assets/img/emprenProfile.jpg"/>
         <div class="card-title">  {{ 'ENTREPRENEUR' | translate }}</div>
       </ion-card>
@@ -20,7 +20,20 @@
       <ion-card (click)="welcome(3)">
         <img src="../assets/img/advisProfile.jpg"/>
         <div class="card-title"> {{ 'ADVISER' | translate }}</div>
-      </ion-card>
+      </ion-card> -->
+
+     <!-- (ionSlideWillChange)="onSlideChangeStart($event)" -->
+
+      <ion-slides pager="true" dir="{{dir}}" (ionSlideWillChange)="onSlideChangeStart($event)" >
+          <ion-slide *ngFor="let slides of slidesInfo; let i = index"   >
+            <img [src]=slides.image class="imgSlide" />
+            <h2 class="slide-title" >{{slides.name}}</h2>
+            <p  style="width: 80%" class="slide-description">{{slides.description}}</p>
+            <button ion-button outline round class="slide-button" color="light" (click)="welcome(i)"> Empezar</button>
+          </ion-slide>        
+     
+        </ion-slides>
+    
     
     </ion-content>
-</ion-content>
+
