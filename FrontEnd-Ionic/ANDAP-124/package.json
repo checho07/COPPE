@@ -32,7 +32,7 @@
     "@ngx-translate/core": "8.0.0",
     "@ngx-translate/http-loader": "^2.0.0",
     "angularfire2": "^5.1.0",
-    "cordova-android": "7.1.2",
+    "cordova-android": "11.0.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-fingerprint-aio": "^2.0.0",
     "cordova-plugin-ionic-keyboard": "^2.1.3",
